@@ -26,8 +26,8 @@ const model = {
          model.get(data.insertId,(err, data) => {
           cb(err, data);
          })
-           
-    });
+        }    
+    );
   }
 };
 module.exports = model;
