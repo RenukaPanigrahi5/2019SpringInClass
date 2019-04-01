@@ -4,7 +4,7 @@
     <h1 v-if="Globals.user">{{Globals.user.name}}My Friends Page</h1>
     <ul>
         <li v-for="friend in friends" :key="friend.id">
-            {{friend.lastname}}
+           {{friend.FirstName}} {{friend.LastName}}
         </li>
         
     </ul>
@@ -16,10 +16,12 @@ import { Globals } from "@/models/api";
 import { GetFriends} from "@/models/users.js";
 
 export default {
-    data: ()=> ({
-        Globals: Globals,
-        friends: []
-    }),
+    data(){
+	        return {
+	            Globals: Globals,
+	            friends: []
+	        }
+	    },
     async mounted(){
         this.friends = await GetFriends();
     }
